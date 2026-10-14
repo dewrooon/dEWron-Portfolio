@@ -1,0 +1,32 @@
+.site-header { position: sticky; top: 0; z-index: 50; background: #0b0f14ed; backdrop-filter: blur(16px); border-bottom: 1px solid var(--color-border); }
+.site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; min-height: 84px; }
+.brand { color: var(--color-text); font-size: 25px; font-weight: 750; letter-spacing: -.065em; text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--color-accent); }
+.site-header__nav { display: flex; align-items: center; gap: 29px; }
+.site-header__nav a { color: var(--color-muted); font-size: 12px; text-decoration: none; transition: color .2s; }
+.site-header__nav a:hover { color: var(--color-accent); }
+.site-header__nav .site-header__contact { display: flex; gap: 24px; align-items: center; margin-left: 12px; padding: 10px 15px; color: var(--color-text); border: 1px solid var(--color-border); border-radius: 6px; }
+.site-header__contact span { color: var(--color-accent); }
+.site-header__toggle { display: none; background: transparent; color: var(--color-text); border: 1px solid var(--color-border); border-radius: 6px; width: 42px; height: 42px; font-size: 24px; cursor: pointer; }
+.site-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 106px; border-top: 1px solid var(--color-border); }
+.site-footer .brand { font-size: 22px; }
+.site-footer__copyright { color: var(--color-muted); font-size: 11px; }
+.site-footer__top { display: inline-flex; align-items: center; gap: 16px; color: var(--color-muted); font-size: 12px; text-decoration: none; }
+.site-footer__top:hover { color: var(--color-accent); }
+@media (max-width: 900px) {
+  .site-header__nav { gap: 18px; }
+  .site-header__nav .site-header__contact { margin-left: 0; }
+}
+@media (max-width: 760px) {
+  .site-header__inner { min-height: 70px; }
+  .site-header__toggle { display: block; }
+  .site-header__nav { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 20px 24px 28px; background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+  .site-header__nav--open { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .site-header__nav a { padding: 15px 0; font-size: 15px; }
+  .site-header__nav .site-header__contact { margin-top: 14px; padding: 14px; justify-content: space-between; }
+  .site-footer { min-height: 100px; flex-wrap: wrap; column-gap: 15px; }
+}
+@media (max-width: 400px) {
+  .site-footer__copyright { font-size: 9px; }
+  .site-footer__top { font-size: 10px; gap: 7px; }
+}

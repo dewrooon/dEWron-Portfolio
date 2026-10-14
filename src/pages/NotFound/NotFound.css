@@ -1,0 +1,25 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 65vh;
+  padding-block: 80px;
+  text-align: center;
+}
+
+.not-found__code {
+  color: var(--color-accent);
+  font-size: clamp(64px, 12vw, 120px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.not-found__title {
+  font-size: clamp(24px, 5vw, 40px);
+}
+
+.not-found__description {
+  color: var(--color-muted);
+}

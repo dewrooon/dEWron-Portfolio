@@ -1,0 +1,100 @@
+:root {
+  --motion-ease: cubic-bezier(.22, 1, .36, 1);
+  --motion-duration: 300ms;
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; translate: 0 22px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes gentle-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
+}
+
+@keyframes status-pulse {
+  0%, 100% { opacity: .65; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-revealed='true'] {
+    animation: reveal-up 650ms var(--motion-ease) var(--reveal-delay, 0ms) backwards;
+  }
+
+  /* Keyboard navigation always takes precedence over an entrance animation. */
+  [data-revealed='true']:focus-within {
+    animation: none;
+  }
+
+  .hero__content > * {
+    animation: reveal-up 700ms var(--motion-ease) backwards;
+  }
+
+  .hero__content > :nth-child(2) { animation-delay: 50ms; }
+  .hero__content > :nth-child(3) { animation-delay: 100ms; }
+  .hero__content > :nth-child(4) { animation-delay: 150ms; }
+  .hero__content > :nth-child(5) { animation-delay: 200ms; }
+  .hero__content > :nth-child(6) { animation-delay: 250ms; }
+  .hero__content > :nth-child(7) { animation-delay: 300ms; }
+  .hero__content > :focus-within { animation: none; }
+  .hero__visual { animation: reveal-up 900ms var(--motion-ease) 150ms backwards; }
+  .hero__editor { animation: gentle-float 5s ease-in-out 900ms 1; }
+  .hero__detail-badge { animation: gentle-float 4s ease-in-out 1200ms 1; }
+  .hero__availability > span { animation: status-pulse 2s ease-in-out 2; }
+  .site-header__nav--open { animation: reveal-up 250ms var(--motion-ease); }
+}
+
+.button,
+.contact__button {
+  transition: background var(--motion-duration), border-color var(--motion-duration),
+    box-shadow var(--motion-duration), transform var(--motion-duration) var(--motion-ease);
+}
+
+.service-card,
+.project-card,
+.skill-item {
+  transition: transform 350ms var(--motion-ease), border-color 350ms,
+    box-shadow 350ms, background 350ms;
+}
+
+.button svg,
+.service-card__link svg,
+.site-footer__top span {
+  transition: transform var(--motion-duration) var(--motion-ease);
+}
+
+.site-header__nav a,
+.contact__link-value {
+  transition: color var(--motion-duration);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover,
+  .skill-item:hover {
+    transform: translateY(-4px);
+    border-color: #38776e;
+    box-shadow: 0 14px 32px #0003;
+  }
+
+  .button--primary:hover,
+  .contact__button:hover {
+    box-shadow: 0 6px 25px #14b8a626;
+  }
+
+  .button:hover svg,
+  .service-card__link:hover svg { transform: translate(2px, -2px); }
+  .site-footer__top:hover span { transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button:hover,
+  .service-card:hover,
+  .project-card:hover,
+  .skill-item:hover,
+  .project-card:hover .project-preview__window,
+  .button:hover svg,
+  .service-card__link:hover svg,
+  .site-footer__top:hover span { transform: none; }
+}
