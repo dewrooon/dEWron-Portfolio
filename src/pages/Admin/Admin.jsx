@@ -129,7 +129,7 @@ function AdminWorkspace({ user }) {
     <div className="admin">
       <aside className="admin__sidebar">
         <Link to="/" className="admin__brand">dEWron<span>.</span></Link>
-        <p className="admin__subtitle">PORTFOLIO MANAGER</p>
+        <p className="admin__subtitle">УПРАВЛЕНИЕ ПОРТФОЛИО</p>
         <nav className="admin__nav" aria-label="Управление портфолио">
           <button className={`admin__nav-button${page === 'dashboard' ? ' admin__nav-button--active' : ''}`} aria-current={page === 'dashboard' ? 'page' : undefined} disabled={busy} onClick={() => navigate('dashboard')}><LayoutDashboard size={18} aria-hidden="true" /> Обзор</button>
           <button className={`admin__nav-button${page === 'projects' ? ' admin__nav-button--active' : ''}`} aria-current={page === 'projects' ? 'page' : undefined} disabled={busy} onClick={() => navigate('projects')}><FolderKanban size={18} aria-hidden="true" /> Проекты</button>
@@ -138,7 +138,7 @@ function AdminWorkspace({ user }) {
         <button className="admin__logout" disabled={busy} onClick={logout}><LogOut size={18} aria-hidden="true" /> Выйти</button>
       </aside>
       <main className="admin__main">
-        <header className="admin__header"><div><h1>{title}</h1><p className="admin__description">{user.email}</p></div><Link to="/" target="_blank" rel="noreferrer">Открыть сайт <ExternalLink size={16} aria-hidden="true" /></Link></header>
+        <header className="admin__header"><div><h1>{title}</h1><p className="admin__description">{user.email}</p></div><Link to="/" target="_blank" rel="noreferrer">Посмотреть сайт <ExternalLink size={16} aria-hidden="true" /></Link></header>
         <p className="admin__message" role="status" aria-atomic="true">{message}</p>
         {loadError && <div className="admin__message" role="alert"><p>{loadError}</p><button className="admin__button" onClick={loadProjects} disabled={busy || loading}>Повторить загрузку</button></div>}
         {loading && <p className="admin__loading" role="status">Загрузка проектов…</p>}

@@ -7,7 +7,7 @@ const textFields = [
   { name: 'image_url', label: 'URL изображения', type: 'url', placeholder: 'https://example.com/image.jpg' },
   { name: 'project_url', label: 'Ссылка на сайт', type: 'url', placeholder: 'https://example.com' },
   { name: 'github_url', label: 'Ссылка на GitHub', type: 'url', placeholder: 'https://github.com/username/project' },
-  { name: 'technologies', label: 'Технологии через запятую', placeholder: 'React, JavaScript, Supabase' },
+  { name: 'technologies', label: 'Технологии (перечислите через запятую)', placeholder: 'React, JavaScript, Supabase' },
 ]
 
 export default function ProjectEditor({ initialProject, onSave, onCancel, busy }) {
@@ -67,24 +67,24 @@ export default function ProjectEditor({ initialProject, onSave, onCancel, busy }
           </label>
         ))}
         <label className="admin-editor__field admin-editor__field--wide" htmlFor={`${formId}-description`}>
-          <span>Описание</span>
+          <span>Кратко расскажите о проекте</span>
           <textarea id={`${formId}-description`} name="description" rows={5} value={form.description} onChange={(event) => updateField('description', event.target.value)} />
         </label>
         <div className="admin-editor__options">
           <label className="admin-editor__checkbox">
             <input type="checkbox" checked={form.is_published} onChange={(event) => updateField('is_published', event.target.checked)} />
-            Опубликовать на сайте
+            Показывать проект на сайте
           </label>
           <label className="admin-editor__checkbox">
             <input type="checkbox" checked={form.is_featured} disabled={!form.is_published || disabled} onChange={(event) => updateField('is_featured', event.target.checked)} />
-            Избранный проект
+            Отметить как избранный
           </label>
-          <p className="admin-editor__hint">Избранным может быть только опубликованный проект.</p>
+          <p className="admin-editor__hint">Избранным можно отметить только опубликованный проект.</p>
         </div>
       </fieldset>
       {error && <p className="admin-editor__error" id={errorId} role="alert">{error.message}</p>}
       <div className="admin-editor__actions">
-        <button className="admin__button admin__button--primary" type="submit" disabled={disabled}><Save size={18} aria-hidden="true" />{saving ? 'Сохранение…' : 'Сохранить проект'}</button>
+        <button className="admin__button admin__button--primary" type="submit" disabled={disabled}><Save size={18} aria-hidden="true" />{saving ? 'Сохраняю…' : 'Сохранить проект'}</button>
         <button className="admin__button" type="button" disabled={disabled} onClick={onCancel}><X size={18} aria-hidden="true" />Отмена</button>
       </div>
     </form>

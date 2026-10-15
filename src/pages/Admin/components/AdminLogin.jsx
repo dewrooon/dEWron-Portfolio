@@ -27,11 +27,11 @@ export default function AdminLogin({ accessError }) {
   return (
     <main className="admin-login">
       <div className="admin-login__panel">
-        <Link to="/">← Вернуться к портфолио</Link>
-        <h1 className="admin-login__title">dEWron Admin</h1>
-        <p className="admin-login__description">Панель управления портфолио</p>
+        <Link to="/">← Вернуться на сайт</Link>
+        <h1 className="admin-login__title">Управление сайтом dEWron</h1>
+        <p className="admin-login__description">Войдите, чтобы управлять проектами в портфолио.</p>
         <form className="admin-login__form" onSubmit={login} aria-busy={busy}>
-          <label className="admin-login__field">Email
+          <label className="admin-login__field">Электронная почта
             <input className="admin-login__input" type="email" autoComplete="username" required value={email} onChange={(event) => setEmail(event.target.value)} disabled={busy} />
           </label>
           <label className="admin-login__field">Пароль

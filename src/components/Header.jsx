@@ -5,7 +5,7 @@ const navigation = [
   ['about', 'Обо мне'],
   ['services', 'Услуги'],
   ['projects', 'Проекты'],
-  ['skills', 'Стек'],
+  ['skills', 'Технологии'],
   ['approach', 'Подход'],
 ]
 
@@ -34,7 +34,7 @@ export default function Header() {
         </button>
         <nav className={`site-header__nav${isOpen ? ' site-header__nav--open' : ''}`} id="primary-navigation" aria-label="Основная навигация">
           {navigation.map(([id, label]) => <Link key={id} to={`/#${id}`} onClick={() => setIsOpen(false)}>{label}</Link>)}
-          <Link className="site-header__contact" to="/#contact" onClick={() => setIsOpen(false)}>Связаться <span aria-hidden="true">↗</span></Link>
+          <Link className="site-header__contact" to="/#contact" onClick={() => setIsOpen(false)}>Обсудить проект <span aria-hidden="true">↗</span></Link>
         </nav>
       </div>
     </header>

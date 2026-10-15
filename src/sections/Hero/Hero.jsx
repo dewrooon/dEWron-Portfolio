@@ -17,10 +17,10 @@ export default function Hero() {
           <div className="hero__availability"><span />Открыт к новым проектам</div>
           <p className="hero__intro">ПРИВЕТ, Я</p>
           <h1 className="hero__title">dEWron<span>.</span></h1>
-          <p className="hero__role">Frontend Developer <span>/</span> <span className="hero__stack">React & JavaScript</span></p>
-          <p className="hero__description">Разрабатываю современные, адаптивные веб-сайты и интерфейсы для бизнеса.</p>
-          <p className="hero__detail">Чистый код, продуманная архитектура и минималистичный дизайн. Решения, которые удобно использовать, развивать и поддерживать.</p>
-          <div className="hero__actions"><a className="button button--primary" href="#contact">Связаться со мной<FiArrowUpRight aria-hidden="true" /></a><a className="button hero__projects-button" href="#projects">Посмотреть проекты<FiArrowDown aria-hidden="true" /></a></div>
+          <p className="hero__role">Frontend-разработчик <span>/</span> <span className="hero__stack">React и JavaScript</span></p>
+          <p className="hero__description">Создаю современные адаптивные сайты и интерфейсы для бизнеса.</p>
+          <p className="hero__detail">Пишу понятный код, продумываю структуру и не перегружаю дизайн. Мои решения удобно использовать, развивать и поддерживать.</p>
+          <div className="hero__actions"><a className="button button--primary" href="#contact">Обсудить проект<FiArrowUpRight aria-hidden="true" /></a><a className="button hero__projects-button" href="#projects">Смотреть проекты<FiArrowDown aria-hidden="true" /></a></div>
         </div>
         <div className="hero__visual" aria-hidden="true">
           <div className="hero__orbit hero__orbit--outer" /><div className="hero__orbit hero__orbit--inner" />
@@ -30,11 +30,11 @@ export default function Hero() {
             <div className="hero__editor-body"><div className="hero__line-numbers">01<br />02<br />03<br />04<br />05<br />06<br />07<br />08<br />09<br />10<br />11<br />12</div><pre className="hero__code"><code><span className="hero__comment">// Turning ideas into interfaces</span>{'\n'}<span className="hero__keyword">const</span>{' developer = {\n  name: '}<span className="hero__string">'dEWron'</span>{',\n  role: '}<span className="hero__string">'Frontend Developer'</span>{',\n  stack: ['}<span className="hero__string">'React'</span>{', '}<span className="hero__string">'JavaScript'</span>{'],\n  approach: '}<span className="hero__string">'Clean Code'</span>{',\n  details: '}<span className="hero__keyword">true</span>{'\n};\n\n'}<span className="hero__keyword">function</span>{' '}<span className="hero__function">buildSomethingGreat</span>{'() {\n  '}<span className="hero__keyword">return</span>{' idea + code + care;\n}'}</code></pre></div>
             <div className="hero__editor-status"><span><span className="hero__status-dot" />Все системы готовы</span><span>JavaScript · UTF-8</span></div>
           </div>
-          <div className="hero__detail-badge"><span className="hero__badge-icon"><FiCheck /></span><div><strong>Внимание к деталям</strong><span>В интерфейсе и в коде.</span></div></div>
+          <div className="hero__detail-badge"><span className="hero__badge-icon"><FiCheck /></span><div><strong>Внимание к деталям</strong><span>И в интерфейсе, и в коде.</span></div></div>
           <span className="hero__coordinate hero__coordinate--bottom">01 — IDEAS INTO REALITY</span>
         </div>
       </div>
-      <div className="hero__bottom"><span className="hero__bottom-label">МОЙ РАБОЧИЙ СТЕК</span><ul className="hero__technologies">{technologies.map(({ label, icon: Icon }) => <li key={label}><Icon aria-hidden="true" />{label}</li>)}</ul><a className="hero__scroll" href="#about" aria-label="Перейти к разделу обо мне"><FiArrowDown aria-hidden="true" /></a></div>
+      <div className="hero__bottom"><span className="hero__bottom-label">МОИ ИНСТРУМЕНТЫ</span><ul className="hero__technologies">{technologies.map(({ label, icon: Icon }) => <li key={label}><Icon aria-hidden="true" />{label}</li>)}</ul><a className="hero__scroll" href="#about" aria-label="Перейти к разделу «Обо мне»"><FiArrowDown aria-hidden="true" /></a></div>
     </section>
   )
 }
